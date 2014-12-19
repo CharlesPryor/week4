@@ -1,23 +1,78 @@
 //Charlie Pryor
 //12/18/14
 
-isEmailAddress("cep21@me.com");
+totalValueFromArray([ "Boss", "MiniBoss", "hello","1", "17", 25,16, "45", "13","90", "gupta", "the", "dino","1000", "356", "2", 167,89, 14, "13000"]);
+
+function totalValueFromArray(e) {
+	var totalValueInArray = 0;
+	for (var i = 0; i < e.length; i++) {
+		//console.log(e[i]);
+		var numFromArray = parseInt(e[i]);
+		if (numFromArray) {
+			console.log("is num");
+			console.log(e[i]);
+			totalValueInArray += numFromArray;
+			//console.log(totalValueInArray);
+		} else {
+			console.log(e[i]," is not a number");
+		}
+	}
+	console.log("End Value: ",totalValueInArray);
+}
 
 
+function stringValueToNumberValue (d) {
+	
+	var value = parseInt(d);
+	
+	return value;
+}
+
+
+function titleCaseString (c) {
+	var originalNoChange = c.split(' ');
+	
+	// MAKEUP: nested loops in loops, deliverable 2
+	//while there is a easier way to do this i decided to use the double nested loop for the makeup
+	
+	var fullSentence = "";
+	for (var i = 0; i < originalNoChange.length; i++) {
+   		 console.log(originalNoChange[i]);
+   		 var word = originalNoChange[i];
+   		 var firstLetter = word.charAt(0)
+   		 //console.log(firstLetter);
+   		 var firstUpper = firstLetter.toUpperCase();
+   		 //console.log(firstUpper);
+   		 var newWordWithUpperFirstLetter = firstUpper;
+   		 for (var n = 1; n < word.length; n++) {
+   		 	//console.log(word[n]);
+   		 	newWordWithUpperFirstLetter += word[n];
+   		 }
+   		 console.log(newWordWithUpperFirstLetter);
+   		 fullSentence += newWordWithUpperFirstLetter;
+   		 fullSentence += " ";
+	}
+		console.log("NEW: ",fullSentence);
+		console.log("old: ",c);
+
+
+}
 
 function isEmailAddress (a){
 	var result = false;
 	var sections = a.split('@');
 	
-	if
-
-
+	if (sections.length == 2) {
+		if (sections[1].indexOf(".com") > -1) {
+			
+			result = true;
+		
+		}
+		
+	}
 
 	return result;
 }
-
-
-
 
 
 
