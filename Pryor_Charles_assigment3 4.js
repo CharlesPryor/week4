@@ -2,14 +2,18 @@
 //12/18/14
 
 //totalValueFromArray([ "Boss", "MiniBoss", "hello","1", "17", 25,16, "45", "13","90", "gupta", "the", "dino","1000", "356", "2", 167,89, 14, "13000"]);
-changeSeperators("hello this is the string","seperator","newseperator");
+changeSeperators("hello this is the string"," ","-");
 
 //Given a string that is a list of things separated by a given string, as well as another string separator, return a string with the first separator changed to the second: "a,b,c" + "," + "/" → "a/b/c".
 function changeSeperators(string,orgSeperator,newSeperator) {
 
-	console.log(string);
-	console.log(orgSeperator);
-	console.log(newSeperator);
+	var seperations = string.split(orgSeperator);
+	var newString = string;
+	for (var i = 0; i < seperations.length; i++) {
+		newString =	newString.replace(orgSeperator,newSeperator);
+		console.log(newString);
+	}
+	console.log(newString);
 
 }
 
